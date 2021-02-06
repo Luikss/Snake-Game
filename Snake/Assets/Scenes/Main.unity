@@ -468,3 +468,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ad495da0f2f1844b977c332d063fda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  snake: {fileID: 269519513}

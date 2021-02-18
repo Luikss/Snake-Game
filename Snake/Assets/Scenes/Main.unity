@@ -215,6 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c4c03fa7d02411429521d145e244b4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gridMoveTimer: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,7 +348,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 527151538}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2813ea78401e7647985e5327bb4ea6d, type: 3}
+  m_Script: {fileID: 11500000, guid: aebe1894f0d65944d9bb3c541c069614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &527151541
@@ -394,7 +395,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 527151540}
-        m_MethodName: BackToMainMenu
+        m_MethodName: PauseToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -403,7 +404,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 2
 --- !u!114 &527151542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -828,6 +829,17 @@ MonoBehaviour:
   snakeHeadSprite: {fileID: 21300000, guid: a6389c1368f3c0348a4a4d02194be695, type: 3}
   snakeBodySprite: {fileID: 21300000, guid: 699ec0eb3513a9e4d9ec52b08a8544ba, type: 3}
   foodSprite: {fileID: 21300000, guid: c3bd1ffb8de1fa441a845a659442868c, type: 3}
+  soundAudioClipArray:
+  - sound: 0
+    audioClip: {fileID: 8300000, guid: 4d40ab1a04d39294382012f105a5f176, type: 3}
+  - sound: 1
+    audioClip: {fileID: 8300000, guid: 2b26e532e1357594f9835a5a8b7fb3f9, type: 3}
+  - sound: 2
+    audioClip: {fileID: 8300000, guid: 2174a4209d20f9045851cef95bfc9716, type: 3}
+  - sound: 3
+    audioClip: {fileID: 8300000, guid: 51b76524965f79e448d85349cd66c337, type: 3}
+  - sound: 4
+    audioClip: {fileID: 8300000, guid: 611728f9d20a2794ba00aa0fe076393e, type: 3}
 --- !u!4 &865107661
 Transform:
   m_ObjectHideFlags: 0
@@ -1422,6 +1434,7 @@ GameObject:
   - component: {fileID: 1283619455}
   - component: {fileID: 1283619456}
   - component: {fileID: 1283619458}
+  - component: {fileID: 1283619457}
   m_Layer: 0
   m_Name: PauseWindow
   m_TagString: Untagged
@@ -1464,6 +1477,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f3752a31b3872f48a3d4ddc7ef7d435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1283619457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283619454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.19607843}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1283619458
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1482,7 +1524,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1358781076}
   - component: {fileID: 1358781078}
-  - component: {fileID: 1358781077}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -1509,35 +1550,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1358781077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1358781075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.19607843}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1358781078
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1849,7 +1861,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 2
 --- !u!114 &1580380122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2229,7 +2241,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2085711732}
   - component: {fileID: 2085711730}
-  - component: {fileID: 2085711731}
   m_Layer: 0
   m_Name: UIcamera
   m_TagString: Untagged
@@ -2280,14 +2291,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &2085711731
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2085711729}
-  m_Enabled: 1
 --- !u!4 &2085711732
 Transform:
   m_ObjectHideFlags: 0
